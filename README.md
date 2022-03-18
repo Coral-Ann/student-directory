@@ -9,6 +9,9 @@ ruby directory.rb
 ```
 
 - Run the above in the command line, within the 'lib' folder.
+- You will be prompted to add the names of the students.
+- Once finished, press enter without adding a name.
+- A list of your students will be printed.
 
 ## Purpose
 
