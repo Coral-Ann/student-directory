@@ -5,31 +5,33 @@ def student_filter(names)
   names[0].upcase != "H" && names.length < 12 ? names : (puts "This name is banned. Try again.")
 end
 
+# This method has definitely grown too large and needs to be refactored!
+# I'll be looking into this at a later date, until then I will not include this exercise in step 06 onwards.
 def student_details
   puts "Please enter the names of the students"
   puts "To finish, just hit return twice:"
   students = []
   input = gets.chomp
-  count = 0
-  student_count = 0
+  hash_count = 0
+  array_count = 0
 
   while !input.empty? do
-    if count == 0
+    if hash_count == 0
       if student_filter(input) == input
         students << {name: input, cohort: "", hobby: ""} 
         puts "Student cohort:"
-        count += 1
+        hash_count += 1
       end
-    elsif count == 1
-      students[student_count][:cohort] << input
+    elsif hash_count == 1
+      students[array_count][:cohort] << input
       puts "Student hobby:"
-      count += 1
-    elsif count == 2
-      students[student_count][:hobby] << input
+      hash_count += 1
+    elsif hash_count == 2
+      students[array_count][:hobby] << input
       puts "Now we have #{students.count} students."
       puts "Next student:"
-      count = 0
-      student_count += 1
+      hash_count = 0
+      array_count += 1
     end
     input = gets.chomp
   end
