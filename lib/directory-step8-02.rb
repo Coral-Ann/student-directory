@@ -1,5 +1,5 @@
-# Exercise 01 =
-# Add '1. 2. 3. etc.' to each line of the directory.
+# Exercise 02 =
+# Block students whose names begin with a specific letter.
 
 def input_students
   puts "Please enter the names of the students."
@@ -7,9 +7,17 @@ def input_students
   students = []
   name = gets.chomp
 
+# I settled on if/else to give the user information as to why 'H' names weren't being added. 
+# If I didn't think informing the user was needed, I could have done the following to the current line 16 and removed if/else:
+#   ' students << {name: name, cohort: :november} if name[0].upcase != "H" '
+
   while !name.empty? do
-    students << {name: name, cohort: :november}
-    puts "Now we have #{students.count} students."
+    if name[0].upcase != "H"
+      students << {name: name, cohort: :november} 
+      puts "Now we have #{students.count} students."
+    else
+      puts "Names that begin with 'H' are banned. Try again."
+    end
     name = gets.chomp
   end
   students
