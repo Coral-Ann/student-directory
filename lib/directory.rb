@@ -1,22 +1,16 @@
-# Instead of an array with already added information, I am refactoring this so that
-# adding students within the code is possible. 
+# Adding an interactive menu.
 
 def input_students
   puts "Please enter the names of the students."
   puts "To finish, just hit enter twice."
-  # creating empty array.
   students = []
-  # getting the first name.
   name = gets.chomp
-  # while name isn't empty, repeat the code.
+
   while !name.empty? do
-    # Adding the student hash to the array.
     students << {name: name, cohort: :november}
     puts "Now we have #{students.count} students."
-    # get another name.
     name = gets.chomp
   end
-  # Return the array of students
   students
 end
 
@@ -35,8 +29,29 @@ def print_footer(names)
   puts "Overall, we have #{names.count} great students."
 end
 
-# Calling the methods
-students = input_students
-print_header
-print(students)
-print_footer(students)
+def interactive_menu
+  students = []
+  loop do
+    # 1. Print the menu and ask the user what to do.
+    puts "1. Input the students"
+    puts "2. Show the students"
+    puts "9. Exit" # 9 because I'm adding more options later.
+    # 2. Read the input and save it into a variable.
+    selection = gets.chomp
+    # 3. Do what the user asks.
+    case selection
+    when "1"
+      students = input_students
+    when "2"
+      print_header
+      print(students)
+      print_footer(students)
+    when "9"
+      exit # Exit the program.
+    else
+      puts "I don't know what you meant, try again."
+    end
+  end
+end
+
+interactive_menu
