@@ -1,11 +1,11 @@
 # Student Directory
 
-The student directory script allows you to manage the list of students enrolled at Villains Academy.
+This student directory script allows you to manage the list of students enrolled at Villains Academy.
 
 ## How to use
 
 ``` shell
-ruby student-directory.rb
+ruby directory.rb
 ```
 
 - Run the above in the command line.
