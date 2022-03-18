@@ -8,7 +8,7 @@ This student directory script allows you to manage the list of students enrolled
 ruby directory.rb
 ```
 
-- Run the above in the command line.
+- Run the above in the command line, within the 'lib' folder.
 
 ## Purpose
 
